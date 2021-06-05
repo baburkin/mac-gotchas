@@ -32,11 +32,13 @@ So, here we go.
    
 2. Check that the binary file is in place (you can also build it yourself by running `make` inside the
    source directory `mac_usb_eject/replug_facetime`):
+   
     ![replug_facetime_file](images/1-file-location.png)
    
 3. Update the `/etc/sudoers` file to add ability for your user to run this program via sudo without 
    asking for a password each time (e.g. run `sudo vim /etc/sudoers`). There should be a line similar 
    to this:
+   
    ![sudoers](images/2-sudo-works.png)
    
 4. Check that the command runs successfully, and the password dialog does not appear:  
@@ -46,18 +48,21 @@ So, here we go.
    
 5. Let's use **Automator** to automate calling this binary. Open **Spotlight Search** area and find
    **automator.app** and run it. Press **⌘ + N** to create new automation **Service**:
+   
    ![automator_new](images/3-automator-new-service.png)
    
 6. From the left-hand pane in **Actions** library choose **Run Shell Script** and drag-and-drop it
    to the left pane and paste the command from step #4 into the script contents. Also, select
    **no input** for **Service receives** value and enable **Ignore this action's input** in
    **Options**:
+   
    ![automator_shell](images/4-automator-run-shell.png)
 
 7. Then save the workflow (**⌘ + S**) as e.g. **Replug FaceTime Camera** in Automator.
 
 8. Open **System Preferences -> Keyboard -> Shortcuts** and choose **Services**. Found down below our
    new automation service **Replug FaceTime Camera**, enable it and add shortcut of your choice:
+   
    ![keyboard_shortcut](images/5-keyboard-shortcut.png)
 
 9. Voilà! Now everytime you find that camera is not working - just press your combination and
